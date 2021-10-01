@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, Button, Alert } from 'react-native';
 
 export default function App() {
+  console.log("everything here");
+  const name= "rohit";
+  const aaja=()=>{
+    return "aaja clicked";
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <SafeAreaView style={styles.container}>
+        <Button title="Click me" onPress={()=>Alert.alert("Title","Message",[{text:"yes",onPress:()=>console.log(aaja()) },{text:"no",onPress:()=> console.log("no")}])}/>
+      </SafeAreaView>
   );
 }
 
